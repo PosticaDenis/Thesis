@@ -11,6 +11,7 @@ sock.bind((UDP_IP, UDP_PORT))
 try:
     while True:
         data, addr = sock.recvfrom(1024)
+        data = data.decode()
         print('Received: ' + data)
         if data.lower() == 'w':
             car.forward(TF, 100, 100, 100, 100)
