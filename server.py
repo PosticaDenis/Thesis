@@ -2,8 +2,8 @@ import socket
 import car_controller as car
 
 TF = 0.065
-UDP_IP = "127.0.0.1"
-UDP_PORT = 5005
+UDP_IP = "192.168.1.5"
+UDP_PORT = 5055
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((UDP_IP, UDP_PORT))
@@ -19,7 +19,8 @@ options = {    "w" : car.forward(TF, 100, 100, 100, 100),
 try:
     while True:
         option, address = sock.recvfrom(256)
-        options[option]
+        print("Received command: ", option.decode())
+        options[option.decode()]
         
 except KeyboardInterrupt:
     sock.close()

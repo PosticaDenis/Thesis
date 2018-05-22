@@ -2,7 +2,7 @@ import socket
 import tkinter as tk
 
 UDP_IP = "192.168.1.5"
-UDP_PORT = 5005
+UDP_PORT = 5055
 MESSAGE = "Hello, World!"
 
 print ("UDP target IP: ", UDP_IP)
@@ -16,10 +16,9 @@ def key_input(event):
     key_set = ['w', 's', 'a', 'd', 'q', 'e']
 
     if key_press.lower() in key_set:
-        MESSAGE = key_press.lower()
-        sock.sendto(MESSAGE.encode(), (UDP_IP, UDP_PORT))
+        sock.sendto(key_press.lower().encode(), (UDP_IP, UDP_PORT))
     else:
-        print("Hell no to the no no ...")
+        print("Invalid command. Use one from set: ", key_set)
 
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
