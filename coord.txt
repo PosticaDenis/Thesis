@@ -1,2 +1,0 @@
-top-left: (8, 82)
-dow-right: (607, 530)

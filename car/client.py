@@ -13,7 +13,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 def key_input(event):
     print ("Key: ", event.char)
     key_press = event.char
-    key_set = ['w', 's', 'a', 'd', 'q', 'e']
+    key_set = ['w', 's', 'a', 'd', 'q', 'e', 'z', 'x']
 
     if key_press.lower() in key_set:
         sock.sendto(key_press.lower().encode(), (UDP_IP, UDP_PORT))

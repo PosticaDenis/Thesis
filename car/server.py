@@ -8,13 +8,6 @@ UDP_PORT = 5055
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((UDP_IP, UDP_PORT))
 
-optionsDic = {    'w' : car.forward(TF, 100, 100, 100, 100),
-               's' : car.reverse(TF, 100, 100, 100, 100),
-               'a' : car.fullleft(TF, 100, 100, 100, 100),
-               'd' : car.fullright(TF, 100, 100, 100, 100),
-               'q' : car.forward(TF, 25, 25, 100, 100),
-               'e' : car.forward(TF, 100, 100, 25, 25),
-}
 options = ['w', 's', 'a', 'd', 'q', 'e', 'z', 'x']
 
 try:
