@@ -1,20 +1,20 @@
 import RPi.GPIO as gpio
 import time
 
-FRIGHT_1 = 23
-FRIGHT_2 = 24
+FRIGHT_1 = 24
+FRIGHT_2 = 23
 FRIGHT_PWM = 16
 
-BRIGHT_1 = 27
-BRIGHT_2 = 17
+BRIGHT_1 = 17
+BRIGHT_2 = 27
 BRIGHT_PWM = 18
 
 FLEFT_1 = 6
 FLEFT_2 = 5
 FLEFT_PWM = 13
 
-BLEFT_1 = 21
-BLEFT_2 = 20
+BLEFT_1 = 20
+BLEFT_2 = 21
 BLEFT_PWM = 19
 
 gpio.setmode(gpio.BCM)
