@@ -19,7 +19,7 @@ try:
             print("Received command: ", option)
             
             if option == 'w':
-                car.forward(TF, 75, 75, 75, 75)
+                car.forward(TF, 60, 60, 60, 69)
             elif option == 's':
                 car.reverse(TF, 75, 75, 75, 75)
             elif option == 'a':
