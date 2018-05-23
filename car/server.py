@@ -19,21 +19,21 @@ try:
             print("Received command: ", option)
             
             if option == 'w':
-                car.forward(TF, 100, 100, 100, 100)
+                car.forward(TF, 75, 75, 75, 75)
             elif option == 's':
-                car.reverse(TF, 100, 100, 100, 100)
+                car.reverse(TF, 75, 75, 75, 75)
             elif option == 'a':
-                car.fullleft(TF, 85, 85, 100, 100)
+                car.fullleft(TF, 60, 60, 80, 80)
             elif option == 'd':
-                car.fullright(TF, 100, 100, 85, 85)
+                car.fullright(TF, 80, 80, 60, 60)
             elif option == 'q':
-                car.forward(TF, 0, 0, 100, 100)
+                car.forward(TF, 0, 0, 80, 80)
             elif option == 'e':
-                car.forward(TF, 100, 100, 0, 0)
+                car.forward(TF, 80, 80, 0, 0)
             elif option == 'z':
-                car.reverse(TF, 0, 0, 100, 100)
+                car.reverse(TF, 0, 0, 80, 80)
             elif option == 'x':
-                car.reverse(TF, 100, 100, 0, 0)
+                car.reverse(TF, 80, 80, 0, 0)
             else:
                 car.stop()
         else:
