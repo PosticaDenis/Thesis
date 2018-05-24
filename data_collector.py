@@ -13,7 +13,6 @@ from tools.keys import check_key
 from tools.screen import get_screen
 
 forward = [1,0,0,0,0,0,0]
-reverse = [0,1,0,0,0,0,0]
 full_left = [0,0,1,0,0,0,0]
 full_right = [0,0,0,1,0,0,0]
 
@@ -38,8 +37,6 @@ def key_for_nn(keys):
 
     if 'W' in keys:
         out = forward
-    elif 'S' in keys:
-        out = reverse
     elif 'A' in keys:
         out = full_left
     elif 'D' in keys:
@@ -71,7 +68,7 @@ def collect_data(fname, fcount):
 
             screen = get_screen(region = (20, 150, 975, 850))
             screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
-            screen = cv2.resize(screen, (292, 255))
+            screen = cv2.resize(screen, (90, 80))
             
             keys = check_key()
             out = key_for_nn(keys)
