@@ -8,7 +8,7 @@ UDP_PORT = 5055
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((UDP_IP, UDP_PORT))
 
-options = ['w', 's', 'a', 'd', 'q', 'e', 'z', 'x']
+options = ['w', 'a', 'd', 'q', 'e']
 
 try:
     while True:
@@ -20,8 +20,6 @@ try:
             
             if option == 'w':
                 car.forward(TF, 30, 30, 30, 30)
-            elif option == 's':
-                car.reverse(TF, 30, 30, 30, 30)
             elif option == 'a':
                 car.fullleft(TF, 30, 30, 50, 50)
             elif option == 'd':
@@ -30,10 +28,6 @@ try:
                 car.forward(TF, 0, 0, 50, 50)
             elif option == 'e':
                 car.forward(TF, 50, 50, 0, 0)
-            elif option == 'z':
-                car.reverse(TF, 0, 0, 50, 50)
-            elif option == 'x':
-                car.reverse(TF, 50, 50, 0, 0)
             else:
                 car.stop()
         else:
