@@ -12,16 +12,14 @@ import time
 from tools.keys import check_key
 from tools.screen import get_screen
 
-forward = [1,0,0,0,0,0,0,0,0]
-reverse = [0,1,0,0,0,0,0,0,0]
-full_left = [0,0,1,0,0,0,0,0,0]
-full_right = [0,0,0,1,0,0,0,0,0]
+forward = [1,0,0,0,0,0,0]
+reverse = [0,1,0,0,0,0,0]
+full_left = [0,0,1,0,0,0,0]
+full_right = [0,0,0,1,0,0,0]
 
-left = [0,0,0,0,1,0,0,0,0]
-right = [0,0,0,0,0,1,0,0,0]
-r_left = [0,0,0,0,0,0,1,0,0]
-r_right = [0,0,0,0,0,0,0,1,0]
-no_key = [0,0,0,0,0,0,0,0,1]
+left = [0,0,0,0,1,0,0]
+right = [0,0,0,0,0,1,0]
+no_key = [0,0,0,0,0,0,1]
 
 fname = 'collected_data/training_data-{}.npy'
 fcount = 1
@@ -50,10 +48,6 @@ def key_for_nn(keys):
         out = left
     elif 'E' in keys:
         out = right
-    elif 'Z' in keys:
-        out = r_left
-    elif 'X' in keys:
-        out = r_right
     else:
         out = no_key
     return out
@@ -75,21 +69,20 @@ def collect_data(fname, fcount):
         
         if not paused:
 
-            screen = get_screen(region=(20,150,975,850))
-            screen = cv2.resize(screen, (292,255))
-            # run a color convert:
-            screen = cv2.cvtColor(screen, cv2.COLOR_BGR2RGB)
+            screen = get_screen(region = (20, 150, 975, 850))
+            screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
+            screen = cv2.resize(screen, (292, 255))
             
             keys = check_key()
             out = key_for_nn(keys)
             training_data.append([screen, out])
 
-            if len(training_data) % 100 == 0:
+            if len(training_data) % 500 == 0:
                 print(len(training_data))
                 
-                if len(training_data) == 500:
+                if len(training_data) == 5000:
                     np.save(fname, training_data)
-                    print('Saved data in file ', fname)
+                    print('Saved data in the file ', fname)
                     
                     training_data = []
                     fcount += 1

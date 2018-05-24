@@ -11,9 +11,11 @@ SendInput = ctypes.windll.user32.SendInput
 
 
 W = 0x11
-A = 0x1E
 S = 0x1F
+A = 0x1E
 D = 0x20
+Q = 0x51
+E = 0x45
 
 # C struct redefinitions 
 PUL = ctypes.POINTER(ctypes.c_ulong)
