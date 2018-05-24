@@ -11,7 +11,7 @@ SendInput = ctypes.windll.user32.SendInput
 
 
 W = 0x11
-S = 0x1F
+# S = 0x1F
 A = 0x1E
 D = 0x20
 Q = 0x51
