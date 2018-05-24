@@ -15,7 +15,7 @@ LR = 1e-3  # learning rate
 
 EPOCHS = 10
 
-MODEL_NAME = 'models/autonomous-car-{}-{}-{}-epochs-xK-data.model'.format(LR, 'alexnetv2',EPOCHS)
+MODEL_NAME = 'models/autonomous-car-{}-{}-{}-epochs-50K-data.model'.format(LR, 'alexnet', EPOCHS)
 
 data_fname  = 'collected_data/training_data-{}.npy'
 
