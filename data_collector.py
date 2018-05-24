@@ -12,13 +12,13 @@ import time
 from tools.keys import check_key
 from tools.screen import get_screen
 
-forward = [1,0,0,0,0,0,0]
-full_left = [0,0,1,0,0,0,0]
-full_right = [0,0,0,1,0,0,0]
+forward = [1,0,0,0,0,0]
+full_left = [0,1,0,0,0,0]
+full_right = [0,0,1,0,0,0]
 
-left = [0,0,0,0,1,0,0]
-right = [0,0,0,0,0,1,0]
-no_key = [0,0,0,0,0,0,1]
+left = [0,0,0,1,0,0]
+right = [0,0,0,0,1,0]
+no_key = [0,0,0,0,0,1]
 
 fname = 'collected_data/training_data-{}.npy'
 fcount = 1
