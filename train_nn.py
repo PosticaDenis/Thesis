@@ -28,7 +28,7 @@ data_files = 10
 for i in range(EPOCHS):
     data = [i for i in range(1, data_files + 1)]
     shuffle(data)
-    for i in enumerate(data):
+    for cnt, i in enumerate(data):
         try:
             train_data = np.load(data_fname.format(i))
             
@@ -46,7 +46,7 @@ for i in range(EPOCHS):
             model.fit({'input': X}, {'targets': Y}, n_epoch = 1, validation_set = ({'input': test_x}, {'targets': test_y}), 
                 snapshot_step = 500, show_metric = True, run_id = MODEL_NAME)
 
-            if i%10 == 0
+            if cnt%10 == 0:
                 model.save(MODEL_NAME)
                 print('Saved model.')
         except Exception as e:
