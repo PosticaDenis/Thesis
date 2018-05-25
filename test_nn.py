@@ -5,11 +5,11 @@ Created on Thu May 24 02:55:32 2018
 @author: denis
 """
 
-
 import cv2
 import time
 from tools.keyboard_controller import PressKey, ReleaseKey, W, A, D, Q, E
-from alexnet import alexnet
+# from alexnet import alexnet
+from models import inception_v3 as googlenet
 from tools.keys import check_key
 from tools.screen import get_screen
 
@@ -20,9 +20,9 @@ LR = 1e-3
 
 EPOCHS = 10
 
-MODEL_NAME = 'models/autonomous-car-{}-{}-{}-epochs-50K-data.model'.format(LR, 'alexnet',EPOCHS)
-    
-model = alexnet(WIDTH, HEIGHT, LR)
+MODEL_NAME = ''
+model = googlenet(WIDTH, HEIGHT, 1, LR, output = 6, model_name=MODEL_NAME)
+#model = alexnet(WIDTH, HEIGHT, LR)
 model.load(MODEL_NAME)
 
 def p_key(key):
