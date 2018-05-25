@@ -4,10 +4,8 @@ import tkinter as tk
 UDP_IP = "192.168.1.5"
 UDP_PORT = 5055
 MESSAGE = "Hello, World!"
-
 print ("UDP target IP: ", UDP_IP)
 print ("UDP target port: ", UDP_PORT)
-
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 def key_input(event):
